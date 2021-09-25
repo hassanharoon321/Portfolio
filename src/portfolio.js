@@ -17,7 +17,7 @@ const greeting = {
     "A passionate Mern Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1zdeYh9ncir-foqCP9yh21f1vBlh6U6z4/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1e-rreso_kragZRgMXw4IAXjjtP-1F4v0/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
