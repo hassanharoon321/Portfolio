@@ -207,7 +207,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/tthia.png"),
+      image: require("./assets/images/updated-thiaza.png"),
       projectName: "Thiaza",
       projectDesc: "Vendor can create a shop set their business time and days & customer can book an appointment",
       footerLink: [
