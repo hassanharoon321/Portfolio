@@ -229,13 +229,13 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/updated-thiaza.png"),
-      projectName: "Special Thinking",
-      projectDesc: "Vendor can create a shop set their business time and days & customer can book an appointment",
+      image: require("./assets/images/in.JPG"),
+      projectName: "Inventive Vision",
+      projectDesc: "Company portfolio working on Virtual Reality | A better revolution",
       footerLink: [
         {
           name: "Visit Website",
-          url: "https://thiaza-react.herokuapp.com/"
+          url: "https://www.inventivevisions.com/"
         }
       ]
     },
