@@ -17,7 +17,7 @@ const greeting = {
     "A passionate Mern Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1e-rreso_kragZRgMXw4IAXjjtP-1F4v0/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1N4KcUN7NPesWO5-W2p6gxKVAqAK7pTyp/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -216,7 +216,29 @@ const bigProjects = {
           url: "https://thiaza-react.herokuapp.com/"
         }
       ]
-    }
+    },
+    {
+      image: require("./assets/images/forwardme.jpg"),
+      projectName: "Forward.me",
+      projectDesc: "Shop USA stores Tax free ship internationally",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://www.forward.me/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/updated-thiaza.png"),
+      projectName: "Special Thinking",
+      projectDesc: "Vendor can create a shop set their business time and days & customer can book an appointment",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://thiaza-react.herokuapp.com/"
+        }
+      ]
+    },
   ],
   display: true // Set false to hide this section, defaults to true
 };
