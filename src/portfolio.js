@@ -239,6 +239,17 @@ const bigProjects = {
         }
       ]
     },
+    {
+      image: require("./assets/images/in.JPG"),
+      projectName: "Special Thinking",
+      projectDesc: "Augmented Reality Real Estate Project You can post your 3d house there",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://www.inventivevisions.com/"
+        }
+      ]
+    },
   ],
   display: true // Set false to hide this section, defaults to true
 };
