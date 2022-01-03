@@ -241,7 +241,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/in.JPG"),
-      projectName: "Special Thinking",
+      projectName: "Spatial Think",
       projectDesc: "Augmented Reality Real Estate Project You can post your 3d house there",
       footerLink: [
         {
