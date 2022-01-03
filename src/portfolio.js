@@ -246,7 +246,7 @@ const bigProjects = {
       footerLink: [
         {
           name: "Visit Website",
-          url: "https://www.inventivevisions.com/"
+          url: ""
         }
       ]
     },
