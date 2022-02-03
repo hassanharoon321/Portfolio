@@ -17,7 +17,7 @@ const greeting = {
     "A passionate Mern Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1N4KcUN7NPesWO5-W2p6gxKVAqAK7pTyp/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1n2jjudBKLq1TW67Q-_L3KlICoTKdIdPm/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -218,8 +218,8 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/forwardme.jpg"),
-      projectName: "Forward.me",
+      image: require("./assets/images/forwardme.png"),
+      projectName: "Forwardme",
       projectDesc: "Shop USA stores Tax free ship internationally",
       footerLink: [
         {
@@ -229,7 +229,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/in.JPG"),
+      image: require("./assets/images/inv.PNG"),
       projectName: "Inventive Vision",
       projectDesc: "Company portfolio working on Virtual Reality | A better revolution",
       footerLink: [
@@ -240,12 +240,12 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/in.JPG"),
+      image: require("./assets/images/st.png"),
       projectName: "Spatial Think",
       projectDesc: "Augmented Reality Real Estate Project You can post your 3d house there",
       footerLink: [
         {
-          name: "Visit Website",
+          name: "Not public yet but I've rights to show on local",
           url: ""
         }
       ]
