@@ -17,7 +17,7 @@ const greeting = {
     "A passionate Mern Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1n2jjudBKLq1TW67Q-_L3KlICoTKdIdPm/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1lgC2Ah_75ZxfW4kk8Rklxw0NubhG4xdT/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -133,15 +133,15 @@ const techStack = {
   experience: [
     {
       Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
+      progressPercentage: "95%" //Insert relative proficiency in percentage
     },
     {
       Stack: "Backend",
-      progressPercentage: "70%"
+      progressPercentage: "90%"
     },
     {
       Stack: "Programming",
-      progressPercentage: "60%"
+      progressPercentage: "70%"
     }
   ],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
@@ -240,6 +240,17 @@ const bigProjects = {
       ]
     },
     {
+      image: require("./assets/images/devnation.PNG"),
+      projectName: "Devnation app",
+      projectDesc: "An online learning app to empower 50M youth of Pakistan",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://app.thedevnation.com/"
+        }
+      ]
+    },
+    {
       image: require("./assets/images/st.png"),
       projectName: "Spatial Think",
       projectDesc: "Augmented Reality Real Estate Project You can post your 3d house there",
@@ -249,7 +260,7 @@ const bigProjects = {
           url: ""
         }
       ]
-    },
+    }
   ],
   display: true // Set false to hide this section, defaults to true
 };
