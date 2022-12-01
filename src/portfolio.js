@@ -269,8 +269,8 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/vertex.svg"),
-      blackImage: require("./assets/images/vertexFax.svg"),
+      image: require("./assets/images/vertexFax.svg "),
+      blackImage: require("./assets/images/vertex.svg"),
       projectName: "Vertex 360",
       projectDesc: "Vertex360 has streamlined our NDIS compliance to an extent",
       footerLink: [
