@@ -20,6 +20,18 @@ export default function socialMedia() {
         </a>
       ) : null}
 
+      {socialMediaLinks.leetCode ? (
+        <a
+          href={socialMediaLinks.leetCode}
+          className="icon-button github"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-gripfire"></i>
+          <span></span>
+        </a>
+      ) : null}
+
       {socialMediaLinks.linkedin ? (
         <a
           href={socialMediaLinks.linkedin}

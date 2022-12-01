@@ -14,7 +14,7 @@ const greeting = {
   username: "Hassan Haroon",
   title: "Hi all, I'm Hassan",
   subTitle: emoji(
-    "A passionate Mern Stack Software Developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
+    "A passionate Software Engineer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
   ),
   resumeLink:
     "https://drive.google.com/file/d/1lgC2Ah_75ZxfW4kk8Rklxw0NubhG4xdT/view?usp=sharing", // Set to empty to hide the button
@@ -31,6 +31,7 @@ const socialMediaLinks = {
   facebook: "https://www.facebook.com/hassanharoon007/",
   medium: "https://medium.com/@hassanharoon321",
   stackoverflow: "https://stackoverflow.com/users/12292696/hassan-haroon",
+  leetCode: "https://leetcode.com/hassanharoon321/",
   // Instagram, Twitter and Kaggle are also supported in the links!
   // To customize icons and social links, tweak src/components/SocialMedia
   display: true // Set true to display this section, defaults to false
@@ -196,6 +197,7 @@ const bigProjects = {
   projects: [
     {
       image: require("./assets/images/cvvlogs.svg"),
+      blackImage: require("./assets/images/cvvlogs.svg"),
       projectName: "Cvvlogs",
       projectDesc: "Job portal where candidates can find job through their video resume & recruiters can posts jobs, scheduled an interview also hired candidates",
       footerLink: [
@@ -208,6 +210,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/updated-thiaza.png"),
+      blackImage: require("./assets/images/updated-thiaza.png"),
       projectName: "Thiaza",
       projectDesc: "Vendor can create a shop set their business time and days & customer can book an appointment",
       footerLink: [
@@ -219,6 +222,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/forwardme.png"),
+      blackImage: require("./assets/images/forwardme.png"),
       projectName: "Forwardme",
       projectDesc: "Shop USA stores Tax free ship internationally",
       footerLink: [
@@ -230,6 +234,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/inv.PNG"),
+      blackImage: require("./assets/images/inv.PNG"),
       projectName: "Inventive Vision",
       projectDesc: "Company portfolio working on Virtual Reality | A better revolution",
       footerLink: [
@@ -241,6 +246,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/devnation.PNG"),
+      blackImage: require("./assets/images/devnation.PNG"),
       projectName: "Devnation app",
       projectDesc: "An online learning app to empower 50M youth of Pakistan",
       footerLink: [
@@ -252,12 +258,25 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/st.png"),
+      blackImage: require("./assets/images/st.png"),
       projectName: "Spatial Think",
       projectDesc: "Augmented Reality Real Estate Project You can post your 3d house there",
       footerLink: [
         {
           name: "Not public yet but I've rights to show on local",
           url: ""
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/vertex.svg"),
+      blackImage: require("./assets/images/vertexFax.svg"),
+      projectName: "Vertex 360",
+      projectDesc: "Vertex360 has streamlined our NDIS compliance to an extent",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://qa.vertex360.io/"
         }
       ]
     }
