@@ -134,15 +134,15 @@ const techStack = {
   experience: [
     {
       Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "95%" //Insert relative proficiency in percentage
+      progressPercentage: "100%" //Insert relative proficiency in percentage
     },
     {
       Stack: "Backend",
-      progressPercentage: "90%"
+      progressPercentage: "95%"
     },
     {
-      Stack: "Programming",
-      progressPercentage: "70%"
+      Stack: "Problem Solving",
+      progressPercentage: "95%"
     }
   ],
   displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
@@ -208,18 +208,18 @@ const bigProjects = {
         //  you can add extra buttons here.
       ]
     },
-    {
-      image: require("./assets/images/updated-thiaza.png"),
-      blackImage: require("./assets/images/updated-thiaza.png"),
-      projectName: "Thiaza",
-      projectDesc: "Vendor can create a shop set their business time and days & customer can book an appointment",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "https://thiaza-react.herokuapp.com/"
-        }
-      ]
-    },
+    // {
+    //   image: require("./assets/images/updated-thiaza.png"),
+    //   blackImage: require("./assets/images/updated-thiaza.png"),
+    //   projectName: "Thiaza",
+    //   projectDesc: "Vendor can create a shop set their business time and days & customer can book an appointment",
+    //   footerLink: [
+    //     {
+    //       name: "Visit Website",
+    //       url: "https://thiaza-react.herokuapp.com/"
+    //     }
+    //   ]
+    // },
     {
       image: require("./assets/images/forwardme.png"),
       blackImage: require("./assets/images/forwardme.png"),
@@ -232,30 +232,30 @@ const bigProjects = {
         }
       ]
     },
-    {
-      image: require("./assets/images/inv.PNG"),
-      blackImage: require("./assets/images/inv.PNG"),
-      projectName: "Inventive Vision",
-      projectDesc: "Company portfolio working on Virtual Reality | A better revolution",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "https://www.inventivevisions.com/"
-        }
-      ]
-    },
-    {
-      image: require("./assets/images/devnation.PNG"),
-      blackImage: require("./assets/images/devnation.PNG"),
-      projectName: "Devnation app",
-      projectDesc: "An online learning app to empower 50M youth of Pakistan",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "https://app.thedevnation.com/"
-        }
-      ]
-    },
+    // {
+    //   image: require("./assets/images/inv.PNG"),
+    //   blackImage: require("./assets/images/inv.PNG"),
+    //   projectName: "Inventive Vision",
+    //   projectDesc: "Company portfolio working on Virtual Reality | A better revolution",
+    //   footerLink: [
+    //     {
+    //       name: "Visit Website",
+    //       url: "https://www.inventivevisions.com/"
+    //     }
+    //   ]
+    // },
+    // {
+    //   image: require("./assets/images/devnation.PNG"),
+    //   blackImage: require("./assets/images/devnation.PNG"),
+    //   projectName: "Devnation app",
+    //   projectDesc: "An online learning app to empower 50M youth of Pakistan",
+    //   footerLink: [
+    //     {
+    //       name: "Visit Website",
+    //       url: "https://app.thedevnation.com/"
+    //     }
+    //   ]
+    // },
     {
       image: require("./assets/images/st.png"),
       blackImage: require("./assets/images/st.png"),
@@ -263,8 +263,8 @@ const bigProjects = {
       projectDesc: "Augmented Reality Real Estate Project You can post your 3d house there",
       footerLink: [
         {
-          name: "Not public yet but I've rights to show on local",
-          url: ""
+          name: "Visit Website",
+          url: "https://spatialthink.com/"
         }
       ]
     },
@@ -276,10 +276,37 @@ const bigProjects = {
       footerLink: [
         {
           name: "Visit Website",
-          url: "https://qa.vertex360.io/"
+          // url: "https://qa.vertex360.io/"
+          url: "https://vertex360.io/"
         }
       ]
-    }
+    },
+    {
+      image: require("./assets/images/davaam.png"),
+      blackImage: require("./assets/images/davaam.png"),
+      projectName: "Davaam Dashboard",
+      projectDesc: "Dashboard to handle real-time data of vending machines",
+      footerLink: [
+        {
+          name: "Visit Website",
+          // url: "https://qa.vertex360.io/"
+          url: "https://davaam.app/auth/sign-in"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/davaam_mobile.png"),
+      blackImage: require("./assets/images/davaam_mobile.png"),
+      projectName: "Davaam Mobile app",
+      projectDesc: "Mobile app for topup and E-commerce app for android and ios",
+      footerLink: [
+        {
+          name: "Visit Website",
+          // url: "https://qa.vertex360.io/"
+          url: "https://apps.apple.com/pk/app/davaam-life/id6447618612"
+        }
+      ]
+    },
   ],
   display: true // Set false to hide this section, defaults to true
 };
