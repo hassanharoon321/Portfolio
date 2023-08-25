@@ -110,7 +110,7 @@ const educationInfo = {
       logo: require("./assets/images/bbsul.png"),
       subHeader: "Bachelors of Science in Computer Science",
       duration: "August 2018 - December 2021",
-      desc: "Participated in the research of Blockcahin and published 1 papers.",
+      desc: "Participated in the research of Blockchain and published 1 papers.",
       // descBullets: [
       //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
       //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
