@@ -14,10 +14,10 @@ const greeting = {
   username: "Hassan Haroon",
   title: "Hi all, I'm Hassan",
   subTitle: emoji(
-    "A passionate Software Engineer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
+    "A passionate mern stack developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1sf-j3R6UZlk-nduvukax82panGzxoZdF/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1sFV9D8IUALqKUllJDoB4U2Vd73qOFe9K/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
