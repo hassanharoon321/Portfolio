@@ -302,8 +302,19 @@ const bigProjects = {
       footerLink: [
         {
           name: "Visit Website",
-          // url: "https://qa.vertex360.io/"
           url: "https://apps.apple.com/pk/app/davaam-life/id6447618612"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/real-estate.png"),
+      blackImage: require("./assets/images/real-estate.png"),
+      projectName: "Real Estate Source Inc",
+      projectDesc: "A platform where users can create and manage real estate transactions, upload necessary forms, and streamline property dealings online",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://realestatesourceinc.info/"
         }
       ]
     },
