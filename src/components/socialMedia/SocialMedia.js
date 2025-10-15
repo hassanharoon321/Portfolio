@@ -20,7 +20,19 @@ export default function socialMedia() {
         </a>
       ) : null}
 
-      {socialMediaLinks.leetCode ? (
+      {socialMediaLinks.fiverr ? (
+        <a
+          href={socialMediaLinks.fiverr}
+          className="icon-button github"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-themeco"></i>
+          <span></span>
+        </a>
+      ) : null}
+
+      {/* {socialMediaLinks.leetCode ? (
         <a
           href={socialMediaLinks.leetCode}
           className="icon-button github"
@@ -30,7 +42,7 @@ export default function socialMedia() {
           <i className="fab fa-gripfire"></i>
           <span></span>
         </a>
-      ) : null}
+      ) : null} */}
 
       {socialMediaLinks.linkedin ? (
         <a
@@ -56,7 +68,7 @@ export default function socialMedia() {
         </a>
       ) : null}
 
-      {socialMediaLinks.gitlab ? (
+      {/* {socialMediaLinks.gitlab ? (
         <a
           href={socialMediaLinks.gitlab}
           className="icon-button gitlab"
@@ -66,7 +78,7 @@ export default function socialMedia() {
           <i className="fab fa-gitlab"></i>
           <span></span>
         </a>
-      ) : null}
+      ) : null} */}
 
       {socialMediaLinks.facebook ? (
         <a
@@ -80,7 +92,7 @@ export default function socialMedia() {
         </a>
       ) : null}
 
-      {socialMediaLinks.instagram ? (
+      {/* {socialMediaLinks.instagram ? (
         <a
           href={socialMediaLinks.instagram}
           className="icon-button instagram"
@@ -102,9 +114,9 @@ export default function socialMedia() {
           <i className="fab fa-twitter"></i>
           <span></span>
         </a>
-      ) : null}
+      ) : null} */}
 
-      {socialMediaLinks.medium ? (
+      {/* {socialMediaLinks.medium ? (
         <a
           href={socialMediaLinks.medium}
           className="icon-button medium"
@@ -114,7 +126,7 @@ export default function socialMedia() {
           <i className="fab fa-medium"></i>
           <span></span>
         </a>
-      ) : null}
+      ) : null} */}
 
       {socialMediaLinks.stackoverflow ? (
         <a

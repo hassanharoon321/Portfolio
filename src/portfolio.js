@@ -12,7 +12,7 @@ const illustration = {
 
 const greeting = {
   username: "Hassan Haroon",
-  title: "Hi all, I'm Hassan",
+  title: "Hi I'm Hassan",
   subTitle: emoji(
     "A passionate mern stack developer 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Nodejs / React Native and some other cool libraries and frameworks."
   ),
@@ -32,6 +32,7 @@ const socialMediaLinks = {
   medium: "https://medium.com/@hassanharoon321",
   stackoverflow: "https://stackoverflow.com/users/12292696/hassan-haroon",
   leetCode: "https://leetcode.com/hassanharoon321/",
+  fiverr: "https://www.fiverr.com/hassan_haroon21/",
   // Instagram, Twitter and Kaggle are also supported in the links!
   // To customize icons and social links, tweak src/components/SocialMedia
   display: true // Set true to display this section, defaults to false
@@ -110,7 +111,7 @@ const educationInfo = {
       logo: require("./assets/images/bbsul.png"),
       subHeader: "Bachelors of Science in Computer Science",
       duration: "August 2018 - December 2021",
-      desc: "Participated in the research of Blockchain and published 1 papers.",
+      desc: "Participated in the research of Blockchain and published 1 papers."
       // descBullets: [
       //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
       //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
@@ -196,14 +197,55 @@ const bigProjects = {
   subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
   projects: [
     {
-      image: require("./assets/images/cvvlogs.svg"),
-      blackImage: require("./assets/images/cvvlogs.svg"),
-      projectName: "Cvvlogs",
-      projectDesc: "Job portal where candidates can find job through their video resume & recruiters can posts jobs, scheduled an interview also hired candidates",
+      image: require("./assets/images/vertexFax.svg"),
+      blackImage: require("./assets/images/vertex.svg"),
+      projectName: "Vertex 360",
+      projectDesc:
+        "Manage your NDIS business with ease—track progress, stay compliant, and access plans and checks anytime, anywhere.",
       footerLink: [
         {
           name: "Visit Website",
-          url: "https://cvvlogs.com/home"
+          // url: "https://qa.vertex360.io/"
+          url: "https://vertex360.io/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/real-estate.png"),
+      blackImage: require("./assets/images/real-estate.png"),
+      projectName: "Real Estate Source Inc",
+      projectDesc:
+        "A platform where users can create and manage real estate transactions, upload necessary forms, and streamline property dealings online",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://realestatesourceinc.info/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/st.png"),
+      blackImage: require("./assets/images/st.png"),
+      projectName: "Spatial Think",
+      projectDesc:
+        "Modern workforce training & collaboration with immersive 3d",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://spatialthink.com/"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/cvvlogs.svg"),
+      blackImage: require("./assets/images/cvvlogs.svg"),
+      projectName: "Cvvlogs",
+      projectDesc:
+        "Job portal where candidates can find job through their video resume & recruiters can posts jobs, scheduled an interview also hired candidates",
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://www.linkedin.com/company/cvvlogs-usa/"
         }
         //  you can add extra buttons here.
       ]
@@ -228,7 +270,7 @@ const bigProjects = {
       footerLink: [
         {
           name: "Visit Website",
-          url: "https://www.forward.me/"
+          url: "https://www.forwardme.com/"
         }
       ]
     },
@@ -256,31 +298,7 @@ const bigProjects = {
     //     }
     //   ]
     // },
-    {
-      image: require("./assets/images/st.png"),
-      blackImage: require("./assets/images/st.png"),
-      projectName: "Spatial Think",
-      projectDesc: "Augmented Reality Real Estate Project You can post your 3d house there",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "https://spatialthink.com/"
-        }
-      ]
-    },
-    {
-      image: require("./assets/images/vertexFax.svg"),
-      blackImage: require("./assets/images/vertex.svg"),
-      projectName: "Vertex 360",
-      projectDesc: "Vertex360 has streamlined our NDIS compliance to an extent",
-      footerLink: [
-        {
-          name: "Visit Website",
-          // url: "https://qa.vertex360.io/"
-          url: "https://vertex360.io/"
-        }
-      ]
-    },
+
     {
       image: require("./assets/images/davaam.png"),
       blackImage: require("./assets/images/davaam.png"),
@@ -298,26 +316,15 @@ const bigProjects = {
       image: require("./assets/images/davaam_mobile.png"),
       blackImage: require("./assets/images/davaam_mobile.png"),
       projectName: "Davaam Mobile app",
-      projectDesc: "Mobile app for topup and E-commerce app for android and ios",
+      projectDesc:
+        "Mobile app for topup and E-commerce app for android and ios",
       footerLink: [
         {
           name: "Visit Website",
           url: "https://apps.apple.com/pk/app/davaam-life/id6447618612"
         }
       ]
-    },
-    {
-      image: require("./assets/images/real-estate.png"),
-      blackImage: require("./assets/images/real-estate.png"),
-      projectName: "Real Estate Source Inc",
-      projectDesc: "A platform where users can create and manage real estate transactions, upload necessary forms, and streamline property dealings online",
-      footerLink: [
-        {
-          name: "Visit Website",
-          url: "https://realestatesourceinc.info/"
-        }
-      ]
-    },
+    }
   ],
   display: true // Set false to hide this section, defaults to true
 };
@@ -369,7 +376,7 @@ const achievementSection = {
       subtitle: "Completed Certifcation from SMIT for Cisco get connected",
       image: require("./assets/images/cisco.png"),
       footerLink: [
-        { name: "Certification", url: "" },
+        {name: "Certification", url: ""},
         {
           name: "Final Project",
           url: "https://pakistan-olx-1.firebaseapp.com/"
