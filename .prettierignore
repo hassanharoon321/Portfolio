@@ -1,4 +1,4 @@
-src/serviceWorker.js
+build
+legacy
 package-lock.json
-src/assets/lottie
-
+public/fonts

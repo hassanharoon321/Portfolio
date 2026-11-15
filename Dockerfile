@@ -1,29 +1,18 @@
-# This file is the main docker file configurations
+# Runs the development server in a container:
+#   docker build -t portfolio .
+#   docker run -p 5173:5173 portfolio
 
-# Official Node JS runtime as a parent image
-FROM node:10.16.0-alpine
+FROM node:22-alpine
 
-# Set the working directory to ./app
 WORKDIR /app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package.json ./
+# Install dependencies first so this layer is reused until the lockfile changes.
+COPY package.json package-lock.json ./
+RUN npm ci
 
-RUN apk add --no-cache git
+COPY . .
 
-# Install any needed packages
-RUN npm install
+EXPOSE 5173
 
-# Audit fix npm packages
-RUN npm audit fix
-
-# Bundle app source
-COPY . /app
-
-# Make port 3000 available to the world outside this container
-EXPOSE 3000
-
-# Run app.js when the container launches
-CMD ["npm", "start"]
+# --host makes the server reachable from outside the container.
+CMD ["npm", "run", "dev", "--", "--host"]

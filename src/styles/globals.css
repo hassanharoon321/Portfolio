@@ -1,0 +1,706 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------------------------------
+   Fonts. Self-hosted Sofia Sans (SIL Open Font License, see public/fonts/OFL.txt).
+   The text face swaps in; the display face blocks briefly so the name never flashes in a
+   fallback font.
+   --------------------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Sofia Sans";
+  font-style: normal;
+  font-weight: 1 1000;
+  font-display: swap;
+  src: url("/fonts/sofia-sans-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Sofia Sans";
+  font-style: normal;
+  font-weight: 1 1000;
+  font-display: swap;
+  src: url("/fonts/sofia-sans-latin-ext.woff2") format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Sofia Sans Extra Condensed";
+  font-style: normal;
+  font-weight: 1 1000;
+  font-display: block;
+  src: url("/fonts/sofia-sans-extra-condensed-latin.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+/* ------------------------------------------------------------------------------------------
+   Tokens. Two themes of the same drawing: ink on drafting paper, and its blueprint.
+   --------------------------------------------------------------------------------------- */
+
+:root {
+  color-scheme: light;
+  --paper: #eff2f6;
+  --sheet: #fafbfd;
+  --ink: #0d1b3e;
+  --ink-soft: #45546f;
+  --line: #b4c0d2;
+  --line-soft: #d6dde8;
+  --accent: #1b3fc2;
+  --on-accent: #ffffff;
+  --amber: #f0a81a;
+  --on-amber: #1f1500;
+  --pink: #d23a78;
+
+  --gutter: clamp(1.25rem, 5vw, 4.5rem);
+  --page: 82.5rem;
+  /* Side padding that keeps content on the page grid at any viewport width. */
+  --edge: max(var(--gutter), calc((100vw - var(--page)) / 2));
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0e2a6e;
+  --sheet: #0a2260;
+  --ink: #eef3ff;
+  --ink-soft: #bac8ef;
+  --line: #5a70b4;
+  --line-soft: #2b4592;
+  --accent: #ffd84d;
+  --on-accent: #0b1b47;
+  --amber: #ffb224;
+  --on-amber: #1f1500;
+  --pink: #ff8fbd;
+}
+
+@theme inline {
+  --font-sans:
+    "Sofia Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --font-display:
+    "Sofia Sans Extra Condensed", "Sofia Sans", "Arial Narrow", ui-sans-serif,
+    sans-serif;
+
+  --color-paper: var(--paper);
+  --color-sheet: var(--sheet);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-amber: var(--amber);
+  --color-pink: var(--pink);
+}
+
+/* ------------------------------------------------------------------------------------------
+   Base
+   --------------------------------------------------------------------------------------- */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    line-height: 1.55;
+    font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------------------------------
+   Layout and type
+   --------------------------------------------------------------------------------------- */
+
+@layer components {
+  .wrap {
+    padding-inline: var(--edge);
+  }
+
+  .section {
+    padding-block: clamp(4.5rem, 9vw, 8.5rem);
+  }
+
+  .measure {
+    max-width: 62ch;
+  }
+
+  /* Display type: the extra-condensed face, set tight. */
+  .t-name,
+  .t-h2,
+  .t-h3,
+  .t-h4,
+  .t-figure {
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  /* The name is sized from the column it sits in, so it always fills it edge to edge.
+     "Hassan Haroon" is 4.6em wide on one line; each word is 2.24em when they stack. */
+  .name-box {
+    container-type: inline-size;
+  }
+
+  .t-name {
+    /* Pull the first stem onto the text margin and the cap line onto the top of the plan. */
+    margin-top: -0.04em;
+    margin-left: -0.04em;
+    font-weight: 800;
+    font-size: calc(100cqi / 4.64);
+    line-height: 0.8;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 64rem) {
+    .t-name {
+      font-size: calc(100cqi / 2.27);
+      line-height: 0.79;
+    }
+  }
+
+  .t-h2 {
+    font-size: clamp(3.25rem, 7.5vw, 6rem);
+    line-height: 0.9;
+  }
+
+  .t-h3 {
+    font-size: clamp(2.5rem, 4.6vw, 3.75rem);
+    line-height: 0.94;
+  }
+
+  .t-h4 {
+    font-size: clamp(1.875rem, 2.7vw, 2.375rem);
+    line-height: 1;
+    letter-spacing: 0.005em;
+  }
+
+  .t-email {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.125rem, 7vw, 5.5rem);
+    line-height: 1;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.1em;
+  }
+
+  .t-email:hover {
+    text-decoration-thickness: 6px;
+  }
+
+  .t-figure {
+    font-size: 2.125rem;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .t-lead {
+    font-size: clamp(1.25rem, 1.55vw, 1.5rem);
+    line-height: 1.4;
+  }
+
+  .t-sub {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .t-meta {
+    font-size: 0.9375rem;
+    line-height: 1.45;
+    color: var(--ink-soft);
+  }
+
+  .link {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.2em;
+  }
+
+  .link:hover {
+    text-decoration-thickness: 0.16em;
+  }
+
+  /* Controls are rounded; drawings and document frames stay square. */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.875rem;
+    padding: 0.55rem 1.2rem;
+    border: 1.5px solid transparent;
+    border-radius: 6px;
+    font-size: 1.0625rem;
+    font-weight: 650;
+    line-height: 1.2;
+    text-decoration: none;
+    transition:
+      background-color 0.12s,
+      color 0.12s,
+      border-color 0.12s;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  .btn-primary:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .btn-quiet {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  .btn-quiet:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .btn-small {
+    min-height: 2.375rem;
+    padding: 0.3rem 0.85rem;
+    font-size: 0.9375rem;
+  }
+
+  .btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .nav-link {
+    padding-block: 0.35rem;
+    border-bottom: 2px solid transparent;
+    font-size: 1rem;
+    font-weight: 550;
+    text-decoration: none;
+  }
+
+  .nav-link:hover {
+    border-bottom-color: var(--line);
+  }
+
+  .nav-link[aria-current="true"] {
+    border-bottom-color: var(--accent);
+  }
+
+  /* Two-option switch: the drawing or its blueprint. */
+  .seg {
+    display: inline-flex;
+    border: 1.5px solid var(--ink);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .seg button {
+    padding: 0.28rem 0.7rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .seg button[aria-pressed="true"] {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .seg button:focus-visible {
+    outline-offset: -3px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: var(--edge);
+    top: 0.5rem;
+    z-index: 60;
+    transform: translateY(-200%);
+  }
+
+  .skip-link:focus {
+    transform: none;
+  }
+
+  /* Table-state swatches, shared by the plan legend and the state table. */
+  .swatch {
+    flex: none;
+    width: 1.15rem;
+    height: 0.95rem;
+    border: 1.5px solid var(--ink);
+    border-radius: 2px;
+    background: var(--sheet);
+  }
+
+  .swatch[data-state="occupied"] {
+    background: var(--ink);
+  }
+
+  .swatch[data-state="away"] {
+    border-style: dashed;
+    background: repeating-linear-gradient(
+      135deg,
+      var(--ink) 0 1.5px,
+      transparent 1.5px 5px
+    );
+  }
+
+  .swatch[data-state="cleaning"] {
+    background: var(--amber);
+  }
+
+  .swatch[data-state="reserved"] {
+    border-color: var(--pink);
+    border-width: 2.5px;
+  }
+
+  .swatch[data-state="unknown"] {
+    border-color: var(--ink-soft);
+    background: repeating-linear-gradient(
+      135deg,
+      var(--ink-soft) 0 1.5px,
+      transparent 1.5px 5px
+    );
+  }
+
+  .swatch[data-kind="guest"],
+  .swatch[data-kind="staff"] {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+  }
+
+  .swatch[data-kind="guest"] {
+    border-color: var(--accent);
+    background: var(--accent);
+  }
+}
+
+/* ------------------------------------------------------------------------------------------
+   The live plan (hero). SVG is styled here so both themes come from the same tokens.
+   --------------------------------------------------------------------------------------- */
+
+.plan {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+}
+
+.plan-wall {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-linecap: square;
+}
+
+.plan-thin {
+  fill: none;
+  stroke: var(--ink-soft);
+  stroke-width: 1;
+}
+
+.plan-view {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1;
+  stroke-dasharray: 2 5;
+}
+
+.plan-camera {
+  fill: var(--ink);
+}
+
+.plan-zone {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+}
+
+.plan-seat {
+  fill: var(--sheet);
+  stroke: var(--line);
+  stroke-width: 1.2;
+}
+
+.plan-label {
+  fill: var(--ink-soft);
+  font-size: 11.5px;
+  font-weight: 550;
+}
+
+.plan-hatch-ink {
+  stroke: var(--ink);
+  stroke-width: 1.4;
+}
+
+.plan-hatch-soft {
+  stroke: var(--ink-soft);
+  stroke-width: 1.2;
+}
+
+.count-band {
+  fill: var(--ink);
+  opacity: 0.09;
+}
+
+.count-line {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.count-line.is-pulsing {
+  animation: count-pulse 0.55s ease-out;
+}
+
+@keyframes count-pulse {
+  0% {
+    stroke-width: 9;
+  }
+  100% {
+    stroke-width: 2.5;
+  }
+}
+
+.count-arrow {
+  fill: var(--accent);
+}
+
+.plan-table {
+  cursor: pointer;
+  outline: none;
+}
+
+.plan-table-shape {
+  fill: var(--sheet);
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  transition:
+    fill 0.25s,
+    stroke 0.25s;
+}
+
+.plan-table-name {
+  fill: var(--ink);
+  font-size: 13.5px;
+  font-weight: 750;
+}
+
+.plan-table-note {
+  fill: var(--ink);
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.plan-table[data-state="occupied"] .plan-table-shape {
+  fill: var(--ink);
+}
+
+.plan-table[data-state="occupied"] text {
+  fill: var(--sheet);
+}
+
+.plan-table[data-state="away"] .plan-table-shape {
+  fill: url(#plan-hatch-ink);
+  stroke-dasharray: 5 4;
+}
+
+/* A solid plate behind the label keeps it readable on top of hatching. */
+.plan-table-plate {
+  fill: none;
+}
+
+.plan-table[data-state="away"] .plan-table-plate,
+.plan-table[data-signal="off"] .plan-table-plate {
+  fill: var(--sheet);
+}
+
+.plan-table[data-state="cleaning"] .plan-table-shape {
+  fill: var(--amber);
+}
+
+.plan-table[data-state="cleaning"] text {
+  fill: var(--on-amber);
+}
+
+.plan-table[data-state="reserved"] .plan-table-shape {
+  stroke: var(--pink);
+  stroke-width: 2.8;
+}
+
+.plan-table[data-signal="off"] .plan-table-shape {
+  fill: url(#plan-hatch-soft);
+  stroke: var(--ink-soft);
+  stroke-width: 1.6;
+  stroke-dasharray: none;
+}
+
+.plan-table[data-signal="off"] text {
+  fill: var(--ink-soft);
+}
+
+.plan-table:hover .plan-table-shape {
+  stroke-width: 3;
+}
+
+.plan-table:focus-visible .plan-table-ring {
+  stroke: var(--accent);
+}
+
+.plan-table-ring {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 3;
+}
+
+.agent-dot {
+  fill: var(--accent);
+}
+
+.agent-box {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.2;
+}
+
+.agent-id {
+  fill: var(--accent);
+  font-size: 9.5px;
+  font-weight: 650;
+}
+
+/* People are tracked while they move and simply counted once they sit still. */
+.agent[data-still="1"] .agent-box,
+.agent[data-still="1"] .agent-id {
+  opacity: 0;
+}
+
+.agent[data-role="staff"] .agent-dot {
+  fill: var(--sheet);
+  stroke: var(--ink);
+  stroke-width: 1.8;
+}
+
+.agent[data-role="staff"] .agent-box {
+  stroke: var(--ink-soft);
+  stroke-dasharray: 2 2.5;
+}
+
+.agent[data-role="staff"] .agent-id {
+  display: none;
+}
+
+.plan[data-variant="compact"] .agent-id {
+  display: none;
+}
+
+/* Guests seated at an occupied table need to stay visible on the dark fill. */
+.agent-halo {
+  fill: none;
+  stroke: var(--sheet);
+  stroke-width: 2;
+}
+
+/* ------------------------------------------------------------------------------------------
+   Footfall diagram: three walking paths at a counting line.
+   --------------------------------------------------------------------------------------- */
+
+.track {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-dasharray: 1 6;
+}
+
+.track-link {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.4;
+}
+
+.marker {
+  fill: var(--accent);
+  stroke: var(--accent);
+  stroke-width: 1.6;
+}
+
+.marker-hollow {
+  fill: var(--sheet);
+  stroke: var(--ink);
+}
+
+.marker-text {
+  fill: var(--on-accent);
+  font-size: 12.5px;
+  font-weight: 750;
+}
+
+.marker-text-hollow {
+  fill: var(--ink);
+}

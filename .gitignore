@@ -8,6 +8,12 @@
 # testing
 /coverage
 /build
+/dist
+*.tsbuildinfo
+
+# The old developerfolio site and an unfinished migration, kept locally as a backup.
+# The committed versions are still in the git history.
+/legacy
 
 
 # misc

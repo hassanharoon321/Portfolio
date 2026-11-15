@@ -1,0 +1,19 @@
+# Netlify build settings. Values here override the ones set in the Netlify dashboard.
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Fonts never change under the same file name, so browsers can keep them.
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Vite puts a content hash in every file name under /assets.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
